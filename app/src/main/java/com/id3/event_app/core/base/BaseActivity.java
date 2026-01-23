@@ -45,17 +45,6 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
 
     protected abstract void initListeners();
 
-
-    protected void showLoading() {
-    }
-
-    protected void hideLoading() {
-    }
-
-
-    protected void showError(String message) {
-    }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="splash_background">#1E88E5</color>
+    <color name="splash_icon_background">#FFFFFF</color>
+
+    <color name="events_primary">#1E88E5</color>
+    <color name="events_primary_dark">#1565C0</color>
+    <color name="events_background">#FFFFFF</color>
+    <color name="events_card_background">#FFFFFF</color>
+    <color name="events_title_text">#1E88E5</color>
+    <color name="events_description_text">#757575</color>
+    <color name="events_time_text">#9E9E9E</color>
+    <color name="events_date_badge_text">#1E88E5</color>
+    <color name="events_chip_selected_bg">#1E88E5</color>
+    <color name="events_chip_selected_text">#FFFFFF</color>
+    <color name="events_chip_unselected_bg">#F5F5F5</color>
+    <color name="events_chip_unselected_text">#757575</color>
+    <color name="events_fab_bg">#1E88E5</color>
+    <color name="events_fab_icon">#FFFFFF</color>
+    <color name="events_divider">#EEEEEE</color>
+    <color name="events_bookmark_icon">#BDBDBD</color>
+    <color name="events_bookmark_selected">#1E88E5</color>
+
+    <color name="event_detail_background">#FFFFFF</color>
+    <color name="event_detail_header_background">#0A1628</color>
+    <color name="event_detail_header_gradient_start">#0D2137</color>
+    <color name="event_detail_header_gradient_end">#1A3A5C</color>
+    <color name="event_detail_neon_accent">#00E5FF</color>
+    <color name="event_detail_primary">#1DA1F2</color>
+    <color name="event_detail_text_primary">#212121</color>
+    <color name="event_detail_text_secondary">#757575</color>
+    <color name="event_detail_text_white">#FFFFFF</color>
+    <color name="event_detail_tab_active">#1DA1F2</color>
+    <color name="event_detail_tab_inactive">#757575</color>
+    <color name="event_detail_search_background">#F5F5F5</color>
+    <color name="event_detail_divider">#E0E0E0</color>
+    <color name="event_detail_checkbox_selected">#1DA1F2</color>
+    <color name="event_detail_card_background">#FFFFFF</color>
+
+    <color name="comments_background">#FFFFFF</color>
+    <color name="comments_text_primary">#1A1A2E</color>
+    <color name="comments_text_secondary">#6B7280</color>
+    <color name="comments_text_time">#6B7280</color>
+    <color name="comments_like_icon">#6B7280</color>
+    <color name="comments_like_icon_active">#2563EB</color>
+    <color name="comments_reply_icon">#6B7280</color>
+    <color name="comments_send_button">#2563EB</color>
+    <color name="comments_input_background">#F3F4F6</color>
+    <color name="comments_input_hint">#9CA3AF</color>
+    <color name="comments_divider">#E5E7EB</color>
+    <color name="comments_avatar_border">#E5E7EB</color>
+
+    <color name="live_status_background">#FFFFFF</color>
+    <color name="live_status_icon_primary">#2563EB</color>
+    <color name="live_status_icon_circle_outer">#E0EDFF</color>
+    <color name="live_status_icon_circle_middle">#B8D4FF</color>
+    <color name="live_status_text_primary">#1A1A2E</color>
+    <color name="live_status_text_secondary">#6B7280</color>
+    <color name="live_status_button_border">#E5E7EB</color>
+    <color name="live_status_button_text">#374151</color>
+    <color name="live_status_live_indicator">#10B981</color>
+    <color name="live_status_finished_indicator">#EF4444</color>
+</resources>

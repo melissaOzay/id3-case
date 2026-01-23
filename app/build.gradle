@@ -61,6 +61,10 @@ dependencies {
     annotationProcessor libs.glide.compiler
 
     implementation libs.swiperefreshlayout
+    implementation libs.splashscreen
+
+    implementation libs.sdp.android
+    implementation libs.ssp.android
 
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
