@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.id3.event_app.R;
 import com.id3.event_app.data.model.Comment;
 import com.id3.event_app.databinding.ItemCommentBinding;
 import com.id3.event_app.utils.DateUtils;
+import com.id3.event_app.utils.ImageLoader;
 
 public class CommentAdapter extends ListAdapter<Comment, CommentAdapter.ViewHolder> {
 
@@ -77,10 +77,7 @@ public class CommentAdapter extends ListAdapter<Comment, CommentAdapter.ViewHold
                 binding.iconLike.setImageResource(R.drawable.ic_like);
             }
 
-            Glide.with(binding.userAvatar.getContext())
-                    .load(comment.getUserAvatarUrl())
-                    .circleCrop()
-                    .into(binding.userAvatar);
+            ImageLoader.loadCircle(binding.userAvatar, comment.getUserAvatarUrl());
 
             if (comment.getReplies() != null && !comment.getReplies().isEmpty()) {
                 binding.recyclerViewReplies.setVisibility(View.VISIBLE);

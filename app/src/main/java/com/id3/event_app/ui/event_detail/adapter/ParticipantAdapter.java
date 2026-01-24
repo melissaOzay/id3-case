@@ -8,10 +8,10 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.id3.event_app.R;
 import com.id3.event_app.data.model.Participant;
 import com.id3.event_app.databinding.ItemParticipantBinding;
+import com.id3.event_app.utils.ImageLoader;
 
 public class ParticipantAdapter extends ListAdapter<Participant, ParticipantAdapter.ViewHolder> {
 
@@ -57,11 +57,7 @@ public class ParticipantAdapter extends ListAdapter<Participant, ParticipantAdap
             binding.participantName.setText(participant.getName());
             binding.participantTitle.setText(participant.getFullTitle());
 
-            Glide.with(binding.participantAvatar.getContext())
-                    .load(participant.getAvatarUrl())
-                    .placeholder(R.drawable.ic_empty_events)
-                    .circleCrop()
-                    .into(binding.participantAvatar);
+            ImageLoader.loadCircle(binding.participantAvatar, participant.getAvatarUrl(), R.drawable.ic_empty_events);
 
         }
     }

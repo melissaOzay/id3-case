@@ -9,12 +9,12 @@
     android:layout_marginHorizontal="@dimen/_14sdp"
     android:layout_marginVertical="@dimen/_6sdp"
     app:cardCornerRadius="@dimen/_14sdp"
-    app:cardElevation="@dimen/_3sdp"
-    app:cardBackgroundColor="@color/events_card_background">
+    app:cardElevation="@dimen/_3sdp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/white">
 
         <ImageView
             android:id="@+id/imageEvent"
@@ -54,7 +54,7 @@
             app:layout_constraintBottom_toTopOf="@+id/textDescription"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageEvent"
-            tools:text="Global Tech Summit 2024" />
+            tools:text="Global Tech Summit 2026" />
 
         <TextView
             android:id="@+id/textDescription"

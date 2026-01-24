@@ -8,12 +8,11 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.id3.event_app.R;
 import com.id3.event_app.data.model.Event;
 import com.id3.event_app.databinding.ItemEventBinding;
 import com.id3.event_app.utils.DateUtils;
+import com.id3.event_app.utils.ImageLoader;
 
 public class EventAdapter extends ListAdapter<Event, EventAdapter.EventViewHolder> {
 
@@ -77,11 +76,7 @@ public class EventAdapter extends ListAdapter<Event, EventAdapter.EventViewHolde
             int bookmarkIcon = event.isBookmarked() ? R.drawable.ic_bookmark_filled : R.drawable.ic_bookmark_outline;
             binding.buttonBookmark.setImageResource(bookmarkIcon);
 
-            Glide.with(binding.imageEvent.getContext())
-                    .load(event.getImageUrl())
-                    .transition(DrawableTransitionOptions.withCrossFade())
-                    .centerCrop()
-                    .into(binding.imageEvent);
+            ImageLoader.load(binding.imageEvent, event.getImageUrl());
 
             binding.cardEvent.setOnClickListener(v -> {
                 if (onEventClickListener != null) {

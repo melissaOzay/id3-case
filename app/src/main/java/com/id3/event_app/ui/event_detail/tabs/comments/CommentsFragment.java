@@ -1,17 +1,21 @@
 package com.id3.event_app.ui.event_detail.tabs.comments;
 
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.bumptech.glide.Glide;
 import com.id3.event_app.core.base.BaseFragment;
 import com.id3.event_app.data.model.Comment;
 import com.id3.event_app.databinding.FragmentCommentsBinding;
 import com.id3.event_app.ui.event_detail.tabs.adapter.CommentAdapter;
+import com.id3.event_app.utils.ImageLoader;
 
 import java.util.List;
 
@@ -45,6 +49,30 @@ public class CommentsFragment extends BaseFragment<FragmentCommentsBinding, Comm
     protected void initView() {
         setupRecyclerView();
         setupUserAvatar();
+        setupKeyboardInsets();
+    }
+
+    private void setupKeyboardInsets() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, windowInsets) -> {
+            Insets imeInsets = windowInsets.getInsets(WindowInsetsCompat.Type.ime());
+            Insets systemBarInsets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
+
+            int bottomPadding = Math.max(imeInsets.bottom, systemBarInsets.bottom);
+            int paddingPx = (int) TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP,
+                    5,
+                    getResources().getDisplayMetrics()
+            );
+
+            binding.inputContainer.setPadding(
+                    binding.inputContainer.getPaddingLeft(),
+                    binding.inputContainer.getPaddingTop(),
+                    binding.inputContainer.getPaddingRight(),
+                    bottomPadding > 0 ? bottomPadding : paddingPx
+            );
+
+            return WindowInsetsCompat.CONSUMED;
+        });
     }
 
     @Override
@@ -84,7 +112,6 @@ public class CommentsFragment extends BaseFragment<FragmentCommentsBinding, Comm
     @Override
     protected void initListeners() {
         binding.btnSend.setOnClickListener(v -> sendComment());
-        binding.editTextComment.setOnClickListener(v->sendComment());
     }
 
     private void setupRecyclerView() {
@@ -94,10 +121,7 @@ public class CommentsFragment extends BaseFragment<FragmentCommentsBinding, Comm
     }
 
     private void setupUserAvatar() {
-        Glide.with(this)
-                .load("https://i.pravatar.cc/150?img=10")
-                .circleCrop()
-                .into(binding.userAvatar);
+        ImageLoader.loadCircle(binding.userAvatar, "https://i.pravatar.cc/150?img=10");
     }
 
     private void sendComment() {

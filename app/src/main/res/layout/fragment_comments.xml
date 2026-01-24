@@ -5,6 +5,7 @@
     android:id="@+id/rootComments"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@color/comments_background">
 
     <LinearLayout
@@ -89,6 +90,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:clipToPadding="false"
+        android:nestedScrollingEnabled="true"
         android:paddingBottom="@dimen/_6sdp"
         tools:listitem="@layout/item_comment"
         app:layout_constraintTop_toTopOf="parent"

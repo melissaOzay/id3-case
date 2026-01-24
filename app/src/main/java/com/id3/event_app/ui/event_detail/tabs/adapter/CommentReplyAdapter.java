@@ -8,10 +8,10 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.id3.event_app.data.model.Comment;
 import com.id3.event_app.databinding.ItemCommentReplyBinding;
 import com.id3.event_app.utils.DateUtils;
+import com.id3.event_app.utils.ImageLoader;
 
 public class CommentReplyAdapter extends ListAdapter<Comment, CommentReplyAdapter.ViewHolder> {
 
@@ -57,10 +57,7 @@ public class CommentReplyAdapter extends ListAdapter<Comment, CommentReplyAdapte
             binding.commentContent.setText(reply.getContent());
             binding.commentTime.setText(DateUtils.getRelativeTime(reply.getTimestamp()));
 
-            Glide.with(binding.userAvatar.getContext())
-                    .load(reply.getUserAvatarUrl())
-                    .circleCrop()
-                    .into(binding.userAvatar);
+            ImageLoader.loadCircle(binding.userAvatar, reply.getUserAvatarUrl());
         }
     }
 }

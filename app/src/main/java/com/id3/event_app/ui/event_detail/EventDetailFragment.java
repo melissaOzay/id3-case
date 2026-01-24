@@ -6,13 +6,12 @@ import android.view.ViewGroup;
 
 import androidx.navigation.Navigation;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.id3.event_app.core.base.BaseFragment;
 import com.id3.event_app.data.model.Event;
 import com.id3.event_app.databinding.FragmentEventDetailBinding;
 import com.id3.event_app.utils.DateUtils;
+import com.id3.event_app.utils.ImageLoader;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -72,11 +71,7 @@ public class EventDetailFragment extends BaseFragment<FragmentEventDetailBinding
         }
 
         if (event.getImageUrl() != null && !event.getImageUrl().isEmpty()) {
-            Glide.with(this)
-                    .load(event.getImageUrl())
-                    .transition(DrawableTransitionOptions.withCrossFade())
-                    .centerCrop()
-                    .into(binding.headerImage);
+            ImageLoader.load(binding.headerImage, event.getImageUrl());
         }
     }
 }

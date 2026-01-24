@@ -1,7 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.MyApplication" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/events_primary</item>
         <item name="colorPrimaryDark">@color/events_primary_dark</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorSurfaceContainer">@color/white</item>
+        <item name="colorSurfaceContainerHigh">@color/white</item>
+        <item name="colorSurfaceContainerHighest">@color/white</item>
     </style>
 
     <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
@@ -22,6 +26,25 @@
         <item name="cornerSizeTopRight">0dp</item>
         <item name="cornerSizeBottomLeft">24dp</item>
         <item name="cornerSizeBottomRight">24dp</item>
+    </style>
+
+    <style name="TextAppearance.App.CollapsingToolbar.Expanded" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
+    <style name="TextAppearance.App.CollapsingToolbar.Collapsed" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
+    <style name="CollapsingToolbarExpandedTitle" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textColor">@android:color/transparent</item>
+        <item name="android:textSize">@dimen/_20ssp</item>
+    </style>
+
+    <style name="CollapsingToolbarCollapsedTitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/event_detail_text_primary</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="Widget.App.Chip.Filter" parent="Widget.Material3.Chip.Filter">

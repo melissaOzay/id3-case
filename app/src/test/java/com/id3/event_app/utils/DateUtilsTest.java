@@ -28,7 +28,7 @@ public class DateUtilsTest {
     @Test
     public void formatEventDate_withValidDate_returnsUppercaseFormat() {
         Calendar calendar = Calendar.getInstance();
-        calendar.set(2024, Calendar.MARCH, 15);
+        calendar.set(2026, Calendar.MARCH, 15);
         Date date = calendar.getTime();
 
         String result = DateUtils.formatEventDate(date);

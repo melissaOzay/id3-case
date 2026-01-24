@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
     android:paddingHorizontal="@dimen/_14sdp"
-    android:paddingVertical="@dimen/_10sdp">
+    android:paddingVertical="@dimen/_4sdp">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/participantAvatar"
