@@ -42,15 +42,12 @@ dependencies {
     implementation libs.lifecycle.viewmodel
     implementation libs.lifecycle.livedata
     implementation libs.lifecycle.runtime
-    implementation libs.lifecycle.common.java8
 
     implementation libs.hilt.android
     annotationProcessor libs.hilt.compiler
 
     implementation libs.navigation.fragment
     implementation libs.navigation.ui
-
-    implementation libs.fragment
 
     implementation libs.rxjava
     implementation libs.rxandroid
@@ -60,13 +57,12 @@ dependencies {
     implementation libs.glide
     annotationProcessor libs.glide.compiler
 
-    implementation libs.swiperefreshlayout
     implementation libs.splashscreen
 
     implementation libs.sdp.android
     implementation libs.ssp.android
 
+    debugImplementation libs.leakcanary
+
     testImplementation libs.junit
-    androidTestImplementation libs.ext.junit
-    androidTestImplementation libs.espresso.core
 }

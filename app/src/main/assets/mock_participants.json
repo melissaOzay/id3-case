@@ -1,0 +1,66 @@
+[
+  {
+    "id": "participant_1",
+    "name": "Alex Rivera",
+    "title": "Senior Developer",
+    "company": "TechCorp",
+    "avatarUrl": "https://i.pravatar.cc/150?img=1",
+    "isSelected": true
+  },
+  {
+    "id": "participant_2",
+    "name": "Sarah Chen",
+    "title": "Lead Architect",
+    "company": "CloudSystems",
+    "avatarUrl": "https://i.pravatar.cc/150?img=2",
+    "isSelected": true
+  },
+  {
+    "id": "participant_3",
+    "name": "Marcus Johnson",
+    "title": "CTO",
+    "company": "InnovateNow",
+    "avatarUrl": "https://i.pravatar.cc/150?img=3",
+    "isSelected": true
+  },
+  {
+    "id": "participant_4",
+    "name": "Elena Rodriguez",
+    "title": "UX Research Lead",
+    "company": "DesignLab",
+    "avatarUrl": "https://i.pravatar.cc/150?img=4",
+    "isSelected": true
+  },
+  {
+    "id": "participant_5",
+    "name": "David Kim",
+    "title": "Product Manager",
+    "company": "GlobalLink",
+    "avatarUrl": "https://i.pravatar.cc/150?img=5",
+    "isSelected": true
+  },
+  {
+    "id": "participant_6",
+    "name": "Maya Patel",
+    "title": "AI Ethics Researcher",
+    "company": "FutureLabs",
+    "avatarUrl": "https://i.pravatar.cc/150?img=6",
+    "isSelected": true
+  },
+  {
+    "id": "participant_7",
+    "name": "James Wilson",
+    "title": "Software Engineer",
+    "company": "DevStudio",
+    "avatarUrl": "https://i.pravatar.cc/150?img=7",
+    "isSelected": false
+  },
+  {
+    "id": "participant_8",
+    "name": "Lisa Thompson",
+    "title": "Data Scientist",
+    "company": "DataDrive",
+    "avatarUrl": "https://i.pravatar.cc/150?img=8",
+    "isSelected": false
+  }
+]

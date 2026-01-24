@@ -4,38 +4,36 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.id3.event_app.core.UiState;
-
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 
-public abstract class BaseViewModel<T> extends ViewModel {
+public abstract class BaseViewModel extends ViewModel {
 
     protected final CompositeDisposable disposables = new CompositeDisposable();
 
-    private final MutableLiveData<UiState<T>> _uiState = new MutableLiveData<>(UiState.idle());
-
-    public LiveData<UiState<T>> getUiState() {
-        return _uiState;
+    private final MutableLiveData<Boolean> _isLoading = new MutableLiveData<>(false);
+    public LiveData<Boolean> isLoading() {
+        return _isLoading;
     }
 
-    protected void setLoading() {
-        _uiState.setValue(UiState.loading());
+    private final MutableLiveData<String> _errorMessage = new MutableLiveData<>();
+    public LiveData<String> getErrorMessage() {
+        return _errorMessage;
     }
 
-    protected void setSuccess(T data) {
-        _uiState.setValue(UiState.success(data));
-    }
-
-    protected void setEmpty() {
-        _uiState.setValue(UiState.empty());
+    protected void setLoading(boolean loading) {
+        _isLoading.setValue(loading);
     }
 
     protected void setError(String message) {
-        _uiState.setValue(UiState.error(message));
+        _errorMessage.setValue(message);
     }
 
-    protected void postSuccess(T data) {
-        _uiState.postValue(UiState.success(data));
+    protected void clearError() {
+        _errorMessage.setValue(null);
+    }
+
+    public void onErrorShown() {
+        clearError();
     }
 
     @Override

@@ -21,7 +21,6 @@ import dagger.hilt.components.SingletonComponent;
 @InstallIn(SingletonComponent.class)
 public class AppModule {
 
-    @SuppressLint("NewApi")
     @Provides
     @Singleton
     public MockDataSource provideMockDataSource() {

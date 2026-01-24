@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootComments"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/comments_background">
+
+    <LinearLayout
+        android:id="@+id/inputContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/_14sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:background="@color/comments_background"
+        android:elevation="@dimen/_6sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/userAvatar"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_notification"
+            android:contentDescription="@null"
+            app:shapeAppearanceOverlay="@style/CircleImageView"
+            app:strokeColor="@color/comments_avatar_border"
+            app:strokeWidth="@dimen/_1sdp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/Widget.Material3.TextInputLayout.FilledBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_weight="1"
+            app:boxBackgroundColor="@color/comments_input_background"
+            app:boxCornerRadiusBottomEnd="@dimen/_18sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_18sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_18sdp"
+            app:boxCornerRadiusTopStart="@dimen/_18sdp"
+            app:hintEnabled="false"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/add_comment_hint"
+                android:textColorHint="@color/comments_input_hint"
+                android:textSize="@dimen/_12ssp"
+                android:inputType="textMultiLine"
+                android:imeOptions="actionSend"
+                android:maxLines="4"
+                android:paddingVertical="@dimen/_8sdp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/btnSend"
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_send"
+            android:contentDescription="@null"
+            app:tint="@color/comments_send_button" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/inputDivider"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/comments_divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/inputContainer" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewComments"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/_6sdp"
+        tools:listitem="@layout/item_comment"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/inputDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/emptyView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/recyclerViewComments"
+        app:layout_constraintBottom_toBottomOf="@id/recyclerViewComments"
+        app:layout_constraintStart_toStartOf="@id/recyclerViewComments"
+        app:layout_constraintEnd_toEndOf="@id/recyclerViewComments">
+
+        <ImageView
+            android:id="@+id/emptyIcon"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:src="@drawable/ic_empty_events"
+            android:contentDescription="@null"
+            app:tint="@color/comments_text_secondary" />
+
+        <TextView
+            android:id="@+id/emptyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:text="@string/no_comments_yet"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/comments_text_secondary" />
+
+        <TextView
+            android:id="@+id/emptySubText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="@string/be_first_to_comment"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/comments_text_secondary" />
+    </LinearLayout>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/recyclerViewComments"
+        app:layout_constraintBottom_toBottomOf="@id/recyclerViewComments"
+        app:layout_constraintStart_toStartOf="@id/recyclerViewComments"
+        app:layout_constraintEnd_toEndOf="@id/recyclerViewComments" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
