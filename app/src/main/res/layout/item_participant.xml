@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:paddingHorizontal="@dimen/_14sdp"
+    android:paddingVertical="@dimen/_4sdp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/participantAvatar"
+        android:layout_width="@dimen/_42sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@null"
+        app:shapeAppearanceOverlay="@style/CircleImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/participantName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_14sdp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/event_detail_text_primary"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/participantAvatar"
+        app:layout_constraintStart_toEndOf="@id/participantAvatar"
+        app:layout_constraintEnd_toStartOf="@id/participantCheckbox"
+        tools:text="Alex Rivera" />
+
+    <TextView
+        android:id="@+id/participantTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/event_detail_text_secondary"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toBottomOf="@id/participantName"
+        app:layout_constraintStart_toEndOf="@id/participantAvatar"
+        app:layout_constraintEnd_toStartOf="@id/participantCheckbox"
+        tools:text="Senior Developer @ TechCorp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/participantCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_comment"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/event_detail_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/participantAvatar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/replyContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="@dimen/_6sdp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/userAvatar"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@null"
+        app:shapeAppearanceOverlay="@style/CircleImageView"
+        tools:src="@drawable/ic_notification" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/comments_text_primary"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="bold"
+                tools:text="Marcus Chen" />
+
+            <TextView
+                android:id="@+id/commentTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:textColor="@color/comments_text_time"
+                android:textSize="@dimen/_9ssp"
+                tools:text="5m ago" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/commentContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:textColor="@color/comments_text_primary"
+            android:textSize="@dimen/_11ssp"
+            android:lineSpacingMultiplier="1.2"
+            tools:text="It's right by the north entrance, Sarah! Look for the large blue banner." />
+
+    </LinearLayout>
+
+</LinearLayout>

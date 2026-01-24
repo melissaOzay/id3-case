@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardEvent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_14sdp"
+    android:layout_marginVertical="@dimen/_6sdp"
+    app:cardCornerRadius="@dimen/_14sdp"
+    app:cardElevation="@dimen/_3sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/imageEvent"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_160sdp"
+            android:scaleType="centerCrop"
+            android:importantForAccessibility="no"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+
+        <ImageButton
+            android:id="@+id/buttonBookmark"
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_bookmark_outline"
+            app:layout_constraintBottom_toBottomOf="@+id/textTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textTitle"
+            app:tint="@color/events_bookmark_icon" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_14sdp"
+            android:layout_marginVertical="@dimen/_6sdp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/events_primary"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageEvent"
+            tools:text="Global Tech Summit 2026" />
+
+        <TextView
+            android:id="@+id/textDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_14sdp"
+            android:ellipsize="end"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:maxLines="2"
+            android:textColor="@color/events_description_text"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.432"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTitle"
+            tools:text="Annual gathering of tech leaders discussing AI, sustainability, and the future..." />
+
+        <ImageView
+            android:id="@+id/iconTime"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_14sdp"
+            android:src="@drawable/ic_time"
+            android:importantForAccessibility="no"
+            app:tint="@color/events_time_text"
+            app:layout_constraintTop_toBottomOf="@id/textDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/textTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/events_time_text"
+            app:layout_constraintTop_toTopOf="@id/iconTime"
+            app:layout_constraintBottom_toBottomOf="@id/iconTime"
+            app:layout_constraintStart_toEndOf="@id/iconTime"
+            tools:text="2h ago" />
+
+        <TextView
+            android:id="@+id/textDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_14sdp"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            android:textColor="@color/events_date_badge_text"
+            android:textAllCaps="true"
+            app:layout_constraintTop_toTopOf="@id/iconTime"
+            app:layout_constraintBottom_toBottomOf="@id/iconTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="OCT 24" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

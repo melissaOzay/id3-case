@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/event_detail_background">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/searchLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_14sdp"
+        app:boxBackgroundColor="@color/comments_input_background"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="@dimen/_1sdp"
+        app:hintEnabled="false"
+        app:boxCornerRadiusTopStart="@dimen/_8sdp"
+        app:boxCornerRadiusTopEnd="@dimen/_8sdp"
+        app:boxCornerRadiusBottomStart="@dimen/_8sdp"
+        app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
+        app:startIconDrawable="@drawable/ic_search"
+        app:startIconTint="@color/event_detail_text_secondary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchInput"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_42sdp"
+            android:background="@null"
+            android:hint="@string/search_participants_hint"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/event_detail_text_primary"
+            android:textColorHint="@color/event_detail_text_secondary"
+            android:textSize="@dimen/_11ssp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/participantsRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:clipToPadding="false"
+        android:nestedScrollingEnabled="true"
+        android:paddingBottom="@dimen/_14sdp"
+        app:layout_constraintTop_toBottomOf="@id/searchLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_participant" />
+
+    <LinearLayout
+        android:id="@+id/emptyView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/searchLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/emptyIcon"
+            android:layout_width="@dimen/_105sdp"
+            android:layout_height="@dimen/_105sdp"
+            android:src="@drawable/ic_empty_events"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/emptyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:text="@string/no_participants_found"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/event_detail_text_secondary" />
+
+    </LinearLayout>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/searchLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

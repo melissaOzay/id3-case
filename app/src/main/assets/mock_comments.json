@@ -1,0 +1,46 @@
+[
+  {
+    "id": "comment_1",
+    "userId": "user1",
+    "userName": "Alex Rivera",
+    "userAvatar": "https://i.pravatar.cc/150?img=1",
+    "content": "Can't wait for this! The lineup of speakers looks absolutely incredible this year.",
+    "minutesAgo": 2,
+    "likeCount": 12,
+    "isLiked": false,
+    "replies": []
+  },
+  {
+    "id": "comment_2",
+    "userId": "user2",
+    "userName": "Sarah Jenkins",
+    "userAvatar": "https://i.pravatar.cc/150?img=2",
+    "content": "Does anyone know where the main meeting point is exactly? The map is a bit confusing.",
+    "minutesAgo": 15,
+    "likeCount": 3,
+    "isLiked": false,
+    "replies": [
+      {
+        "id": "reply_1",
+        "userId": "user3",
+        "userName": "Marcus Chen",
+        "userAvatar": "https://i.pravatar.cc/150?img=3",
+        "content": "It's right by the north entrance, Sarah! Look for the large blue banner.",
+        "minutesAgo": 5,
+        "likeCount": 0,
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": "comment_3",
+    "userId": "user4",
+    "userName": "Elena Rodriguez",
+    "userAvatar": "https://i.pravatar.cc/150?img=4",
+    "content": "Looking forward to networking with everyone. Is there a digital business card exchange planned?",
+    "minutesAgo": 60,
+    "likeCount": 0,
+    "isLiked": false,
+    "replies": []
+  }
+]

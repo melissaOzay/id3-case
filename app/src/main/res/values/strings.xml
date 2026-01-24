@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Event App</string>
+    <string name="no_events">No events available</string>
+
+    <string name="event_detail">Event Detail</string>
+
+    <string name="events_title">Events</string>
+    <string name="filter_all">All</string>
+    <string name="filter_today">Today</string>
+    <string name="filter_upcoming">Upcoming</string>
+    <string name="filter_past">Past</string>
+    <string name="add_event">Add Event</string>
+    <string name="no_events_found">No events found</string>
+
+    <string name="refresh_now">Refresh now</string>
+    <string name="try_again">Try again</string>
+    <string name="next_update_in">Next update in %1$ds</string>
+
+    <string name="add_comment_hint">Add a comment…</string>
+    <string name="no_comments_yet">No comments yet</string>
+    <string name="be_first_to_comment">Be the first to comment!</string>
+    <string name="reply">Reply</string>
+
+    <string name="search_participants_hint">Search participants…</string>
+    <string name="no_participants_found">No participants found</string>
+
+    <string name="tab_participants">Participants</string>
+    <string name="tab_comments">Comments</string>
+    <string name="tab_live_status">Live Status</string>
+</resources>

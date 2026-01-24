@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/live_status_background">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="400dp">
+
+        <LinearLayout
+            android:id="@+id/contentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_20sdp">
+
+            <FrameLayout
+                android:layout_width="@dimen/_140sdp"
+                android:layout_height="@dimen/_140sdp"
+                android:layout_gravity="center">
+
+                <View
+                    android:layout_width="@dimen/_140sdp"
+                    android:layout_height="@dimen/_140sdp"
+                    android:background="@drawable/bg_broadcast_circle_outer" />
+
+                <View
+                    android:layout_width="@dimen/_105sdp"
+                    android:layout_height="@dimen/_105sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_broadcast_circle_middle" />
+
+                <View
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_broadcast_circle_inner" />
+
+                <ImageView
+                    android:layout_width="@dimen/_42sdp"
+                    android:layout_height="@dimen/_42sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_broadcast"
+                    tools:ignore="ContentDescription" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvStatusMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_28sdp"
+                android:gravity="center"
+                android:textColor="@color/live_status_text_primary"
+                android:textSize="@dimen/_17ssp"
+                android:textStyle="bold"
+                tools:text="Event is Live" />
+
+            <TextView
+                android:id="@+id/tvCountdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:gravity="center"
+                android:textColor="@color/live_status_text_secondary"
+                android:textSize="@dimen/_12ssp"
+                tools:text="Auto-refresh in 25 seconds" />
+
+            <LinearLayout
+                android:id="@+id/btnRefresh"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/bg_refresh_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_20sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/ic_refresh"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:text="@string/refresh_now"
+                    android:textColor="@color/live_status_button_text"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/_20sdp"
+            android:textColor="@color/live_status_text_secondary"
+            android:textSize="@dimen/_14ssp"
+            android:visibility="gone"
+            tools:text="Failed to load status" />
+
+    </FrameLayout>
+
+</androidx.core.widget.NestedScrollView>
